@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>VEN_EXPERIMENT_AUTO_UPDATE</key>
+	<dict>
+		<key>VEN_EXPERIMENT_NAME</key>
+		<string>Automatic Updates</string>
+		<key>VEN_EXPERIMENT_DEFAULT_VALUE</key>
+		<true/>
+		<key>VEN_EXPERIMENT_USER_CHANGEABLE</key>
+		<false/>
+		<key>VEN_EXPERIMENT_FORCE_UPDATE</key>
+		<true/>
+	</dict>
+	<key>VEN_EXPERIMENT_SOME_EXPERIMENT</key>
+	<dict>
+		<key>VEN_EXPERIMENT_NAME</key>
+		<string>Some Experiment Title</string>
+		<key>VEN_EXPERIMENT_ENABLED</key>
+		<false/>
+		<key>VEN_EXPERIMENT_USER_EDITABLE</key>
+		<true/>
+	</dict>
+	<key>VEN_EXPERIMENT_SMS_INVITES</key>
+	<dict>
+		<key>VEN_EXPERIMENT_NAME</key>
+		<string>SMS Invites</string>
+		<key>VEN_EXPERIMENT_DEFAULT_VALUE</key>
+		<false/>
+		<key>VEN_EXPERIMENT_USER_CHANGEABLE</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

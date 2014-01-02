@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C21EE10E1865D1BC00C3A07D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21EE10D1865D1BC00C3A07D /* Foundation.framework */; };
+		C21EE11C1865D1BC00C3A07D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21EE11B1865D1BC00C3A07D /* XCTest.framework */; };
+		C21EE11D1865D1BC00C3A07D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21EE10D1865D1BC00C3A07D /* Foundation.framework */; };
+		C21EE11F1865D1BC00C3A07D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21EE11E1865D1BC00C3A07D /* UIKit.framework */; };
+		C21EE1221865D1BC00C3A07D /* libVENExperimentsManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C21EE10A1865D1BC00C3A07D /* libVENExperimentsManager.a */; };
+		C21EE1281865D1BC00C3A07D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C21EE1261865D1BC00C3A07D /* InfoPlist.strings */; };
+		C21EE12A1865D1BC00C3A07D /* VENExperimentsManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C21EE1291865D1BC00C3A07D /* VENExperimentsManagerTests.m */; };
+		C21EE1371865D1DC00C3A07D /* VENExperimentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C21EE1341865D1DC00C3A07D /* VENExperimentsManager.m */; };
+		C21EE13B1865D23D00C3A07D /* VENExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = C21EE13A1865D23D00C3A07D /* VENExperiment.m */; };
+		C21EE13D1865D7F700C3A07D /* testExperiments.plist in Resources */ = {isa = PBXBuildFile; fileRef = C21EE13C1865D7F700C3A07D /* testExperiments.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C21EE1201865D1BC00C3A07D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C21EE1021865D1BC00C3A07D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C21EE1091865D1BC00C3A07D;
+			remoteInfo = VENExperimentsManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C21EE1081865D1BC00C3A07D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C21EE10A1865D1BC00C3A07D /* libVENExperimentsManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVENExperimentsManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C21EE10D1865D1BC00C3A07D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C21EE1111865D1BC00C3A07D /* VENExperimentsManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VENExperimentsManager-Prefix.pch"; sourceTree = "<group>"; };
+		C21EE11A1865D1BC00C3A07D /* VENExperimentsManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VENExperimentsManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C21EE11B1865D1BC00C3A07D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C21EE11E1865D1BC00C3A07D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C21EE1251865D1BC00C3A07D /* VENExperimentsManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VENExperimentsManagerTests-Info.plist"; sourceTree = "<group>"; };
+		C21EE1271865D1BC00C3A07D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C21EE1291865D1BC00C3A07D /* VENExperimentsManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENExperimentsManagerTests.m; sourceTree = "<group>"; };
+		C21EE1331865D1DC00C3A07D /* VENExperimentsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENExperimentsManager.h; sourceTree = "<group>"; };
+		C21EE1341865D1DC00C3A07D /* VENExperimentsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENExperimentsManager.m; sourceTree = "<group>"; };
+		C21EE1391865D23D00C3A07D /* VENExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENExperiment.h; sourceTree = "<group>"; };
+		C21EE13A1865D23D00C3A07D /* VENExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENExperiment.m; sourceTree = "<group>"; };
+		C21EE13C1865D7F700C3A07D /* testExperiments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = testExperiments.plist; sourceTree = "<group>"; };
+		C21EE13E1865E05700C3A07D /* VENTestExperiments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENTestExperiments.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C21EE1071865D1BC00C3A07D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C21EE10E1865D1BC00C3A07D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C21EE1171865D1BC00C3A07D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C21EE1221865D1BC00C3A07D /* libVENExperimentsManager.a in Frameworks */,
+				C21EE11C1865D1BC00C3A07D /* XCTest.framework in Frameworks */,
+				C21EE11F1865D1BC00C3A07D /* UIKit.framework in Frameworks */,
+				C21EE11D1865D1BC00C3A07D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C21EE1011865D1BC00C3A07D = {
+			isa = PBXGroup;
+			children = (
+				C21EE10F1865D1BC00C3A07D /* VENExperimentsManager */,
+				C21EE1231865D1BC00C3A07D /* VENExperimentsManagerTests */,
+				C21EE10C1865D1BC00C3A07D /* Frameworks */,
+				C21EE10B1865D1BC00C3A07D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C21EE10B1865D1BC00C3A07D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C21EE10A1865D1BC00C3A07D /* libVENExperimentsManager.a */,
+				C21EE11A1865D1BC00C3A07D /* VENExperimentsManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C21EE10C1865D1BC00C3A07D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C21EE10D1865D1BC00C3A07D /* Foundation.framework */,
+				C21EE11B1865D1BC00C3A07D /* XCTest.framework */,
+				C21EE11E1865D1BC00C3A07D /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C21EE10F1865D1BC00C3A07D /* VENExperimentsManager */ = {
+			isa = PBXGroup;
+			children = (
+				C21EE1331865D1DC00C3A07D /* VENExperimentsManager.h */,
+				C21EE1341865D1DC00C3A07D /* VENExperimentsManager.m */,
+				C21EE1391865D23D00C3A07D /* VENExperiment.h */,
+				C21EE13A1865D23D00C3A07D /* VENExperiment.m */,
+				C21EE1101865D1BC00C3A07D /* Supporting Files */,
+			);
+			path = VENExperimentsManager;
+			sourceTree = "<group>";
+		};
+		C21EE1101865D1BC00C3A07D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C21EE1111865D1BC00C3A07D /* VENExperimentsManager-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C21EE1231865D1BC00C3A07D /* VENExperimentsManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C21EE13C1865D7F700C3A07D /* testExperiments.plist */,
+				C21EE13E1865E05700C3A07D /* VENTestExperiments.h */,
+				C21EE1291865D1BC00C3A07D /* VENExperimentsManagerTests.m */,
+				C21EE1241865D1BC00C3A07D /* Supporting Files */,
+			);
+			path = VENExperimentsManagerTests;
+			sourceTree = "<group>";
+		};
+		C21EE1241865D1BC00C3A07D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C21EE1251865D1BC00C3A07D /* VENExperimentsManagerTests-Info.plist */,
+				C21EE1261865D1BC00C3A07D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C21EE1091865D1BC00C3A07D /* VENExperimentsManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C21EE12D1865D1BC00C3A07D /* Build configuration list for PBXNativeTarget "VENExperimentsManager" */;
+			buildPhases = (
+				C21EE1061865D1BC00C3A07D /* Sources */,
+				C21EE1071865D1BC00C3A07D /* Frameworks */,
+				C21EE1081865D1BC00C3A07D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VENExperimentsManager;
+			productName = VENExperimentsManager;
+			productReference = C21EE10A1865D1BC00C3A07D /* libVENExperimentsManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C21EE1191865D1BC00C3A07D /* VENExperimentsManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C21EE1301865D1BC00C3A07D /* Build configuration list for PBXNativeTarget "VENExperimentsManagerTests" */;
+			buildPhases = (
+				C21EE1161865D1BC00C3A07D /* Sources */,
+				C21EE1171865D1BC00C3A07D /* Frameworks */,
+				C21EE1181865D1BC00C3A07D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C21EE1211865D1BC00C3A07D /* PBXTargetDependency */,
+			);
+			name = VENExperimentsManagerTests;
+			productName = VENExperimentsManagerTests;
+			productReference = C21EE11A1865D1BC00C3A07D /* VENExperimentsManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C21EE1021865D1BC00C3A07D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Venmo;
+			};
+			buildConfigurationList = C21EE1051865D1BC00C3A07D /* Build configuration list for PBXProject "VENExperimentsManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C21EE1011865D1BC00C3A07D;
+			productRefGroup = C21EE10B1865D1BC00C3A07D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C21EE1091865D1BC00C3A07D /* VENExperimentsManager */,
+				C21EE1191865D1BC00C3A07D /* VENExperimentsManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C21EE1181865D1BC00C3A07D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C21EE1281865D1BC00C3A07D /* InfoPlist.strings in Resources */,
+				C21EE13D1865D7F700C3A07D /* testExperiments.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C21EE1061865D1BC00C3A07D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C21EE13B1865D23D00C3A07D /* VENExperiment.m in Sources */,
+				C21EE1371865D1DC00C3A07D /* VENExperimentsManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C21EE1161865D1BC00C3A07D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C21EE12A1865D1BC00C3A07D /* VENExperimentsManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C21EE1211865D1BC00C3A07D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C21EE1091865D1BC00C3A07D /* VENExperimentsManager */;
+			targetProxy = C21EE1201865D1BC00C3A07D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C21EE1261865D1BC00C3A07D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C21EE1271865D1BC00C3A07D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C21EE12B1865D1BC00C3A07D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C21EE12C1865D1BC00C3A07D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C21EE12E1865D1BC00C3A07D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/VENExperimentsManager.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VENExperimentsManager/VENExperimentsManager-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C21EE12F1865D1BC00C3A07D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/VENExperimentsManager.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VENExperimentsManager/VENExperimentsManager-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C21EE1311865D1BC00C3A07D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VENExperimentsManager/VENExperimentsManager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "VENExperimentsManagerTests/VENExperimentsManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TESTING = 1;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C21EE1321865D1BC00C3A07D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VENExperimentsManager/VENExperimentsManager-Prefix.pch";
+				INFOPLIST_FILE = "VENExperimentsManagerTests/VENExperimentsManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TESTING = 1;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C21EE1051865D1BC00C3A07D /* Build configuration list for PBXProject "VENExperimentsManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C21EE12B1865D1BC00C3A07D /* Debug */,
+				C21EE12C1865D1BC00C3A07D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C21EE12D1865D1BC00C3A07D /* Build configuration list for PBXNativeTarget "VENExperimentsManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C21EE12E1865D1BC00C3A07D /* Debug */,
+				C21EE12F1865D1BC00C3A07D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C21EE1301865D1BC00C3A07D /* Build configuration list for PBXNativeTarget "VENExperimentsManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C21EE1311865D1BC00C3A07D /* Debug */,
+				C21EE1321865D1BC00C3A07D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C21EE1021865D1BC00C3A07D /* Project object */;
+}
