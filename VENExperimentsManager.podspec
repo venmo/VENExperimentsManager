@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "VENExperimentsManager"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "Definition, management and control of experiments within an iOS app."
   s.description  = <<-DESC
                    VENExperimentsManager enables easy definition, management and control of experiments within an iOS app including the following:
@@ -17,5 +17,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.0'
   s.source       = { :git => "git@github.braintreeps.com:chrismaddern/VENExperimentsManager.git", :tag => "v#{s.version}" }
   s.source_files = 'VENExperimentsManager/**/*.{h,m}'
+  s.resources    = ["VENExperimentsManager/**/*.xib"]
   s.requires_arc = true
 end

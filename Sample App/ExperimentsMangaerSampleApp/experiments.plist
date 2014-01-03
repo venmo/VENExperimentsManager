@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>VEN_EXPERIMENT_SNOW</key>
+	<dict>
+		<key>VEN_EXPERIMENT_NAME</key>
+		<string>Snowy Christmas</string>
+		<key>VEN_EXPERIMENT_STABLE</key>
+		<false/>
+		<key>VEN_EXPERIMENT_ENABLED</key>
+		<true/>
+		<key>VEN_EXPERIMENT_USER_EDITABLE</key>
+		<true/>
+	</dict>
+	<key>VEN_EXPERIMENT_AUTO_UPDATE</key>
+	<dict>
+		<key>VEN_EXPERIMENT_NAME</key>
+		<string>Automatic Updates</string>
+		<key>VEN_EXPERIMENT_ENABLED</key>
+		<true/>
+		<key>VEN_EXPERIMENT_STABLE</key>
+		<true/>
+		<key>VEN_EXPERIMENT_USER_EDITABLE</key>
+		<false/>
+		<key>VEN_EXPERIMENT_FORCE_UPDATE</key>
+		<true/>
+	</dict>
+	<key>VEN_EXPERIMENT_SOME_EXPERIMENT</key>
+	<dict>
+		<key>VEN_EXPERIMENT_NAME</key>
+		<string>Some Experiment</string>
+		<key>VEN_EXPERIMENT_ENABLED</key>
+		<false/>
+		<key>VEN_EXPERIMENT_STABLE</key>
+		<false/>
+		<key>VEN_EXPERIMENT_USER_EDITABLE</key>
+		<false/>
+	</dict>
+	<key>VEN_EXPERIMENT_MAINTENANCE_MODES</key>
+	<dict>
+		<key>VEN_EXPERIMENT_NAME</key>
+		<string>Service Maintenance Mode</string>
+		<key>VEN_EXPERIMENT_STABLE</key>
+		<false/>
+		<key>VEN_EXPERIMENT_ENABLED</key>
+		<false/>
+		<key>VEN_EXPERIMENT_USER_EDITABLE</key>
+		<true/>
+	</dict>
+</dict>
+</plist>
