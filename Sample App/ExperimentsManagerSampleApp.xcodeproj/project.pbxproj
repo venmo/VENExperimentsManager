@@ -37,19 +37,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C249F31E1877293D00D417B2 /* ExperimentsMangaerSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExperimentsMangaerSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C249F31E1877293D00D417B2 /* ExperimentsManagerSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExperimentsManagerSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C249F3211877293D00D417B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C249F3231877293D00D417B2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C249F3251877293D00D417B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		C249F3291877293D00D417B2 /* ExperimentsMangaerSampleApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExperimentsMangaerSampleApp-Info.plist"; sourceTree = "<group>"; };
+		C249F3291877293D00D417B2 /* ExperimentsManagerSampleApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExperimentsManagerSampleApp-Info.plist"; sourceTree = "<group>"; };
 		C249F32B1877293D00D417B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C249F32D1877293D00D417B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C249F32F1877293D00D417B2 /* ExperimentsMangaerSampleApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExperimentsMangaerSampleApp-Prefix.pch"; sourceTree = "<group>"; };
+		C249F32F1877293D00D417B2 /* ExperimentsManagerSampleApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExperimentsManagerSampleApp-Prefix.pch"; sourceTree = "<group>"; };
 		C249F3301877293D00D417B2 /* VENAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENAppDelegate.h; sourceTree = "<group>"; };
 		C249F3311877293D00D417B2 /* VENAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENAppDelegate.m; sourceTree = "<group>"; };
 		C249F3341877293D00D417B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C249F3391877293D00D417B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C249F33F1877293D00D417B2 /* ExperimentsMangaerSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExperimentsMangaerSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C249F33F1877293D00D417B2 /* ExperimentsManagerSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExperimentsManagerSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C249F3401877293D00D417B2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C2E135241877295E005F3013 /* VENExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENExperiment.h; sourceTree = "<group>"; };
 		C2E135251877295E005F3013 /* VENExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENExperiment.m; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		C249F3151877293D00D417B2 = {
 			isa = PBXGroup;
 			children = (
-				C249F3271877293D00D417B2 /* ExperimentsMangaerSampleApp */,
+				C249F3271877293D00D417B2 /* ExperimentsManagerSampleApp */,
 				C249F3201877293D00D417B2 /* Frameworks */,
 				C249F31F1877293D00D417B2 /* Products */,
 			);
@@ -99,8 +99,8 @@
 		C249F31F1877293D00D417B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C249F31E1877293D00D417B2 /* ExperimentsMangaerSampleApp.app */,
-				C249F33F1877293D00D417B2 /* ExperimentsMangaerSampleAppTests.xctest */,
+				C249F31E1877293D00D417B2 /* ExperimentsManagerSampleApp.app */,
+				C249F33F1877293D00D417B2 /* ExperimentsManagerSampleAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,7 +116,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C249F3271877293D00D417B2 /* ExperimentsMangaerSampleApp */ = {
+		C249F3271877293D00D417B2 /* ExperimentsManagerSampleApp */ = {
 			isa = PBXGroup;
 			children = (
 				C2E135231877295E005F3013 /* VENExperimentsManager */,
@@ -127,16 +127,16 @@
 				C249F3391877293D00D417B2 /* Images.xcassets */,
 				C249F3281877293D00D417B2 /* Supporting Files */,
 			);
-			path = ExperimentsMangaerSampleApp;
+			path = ExperimentsManagerSampleApp;
 			sourceTree = "<group>";
 		};
 		C249F3281877293D00D417B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C249F3291877293D00D417B2 /* ExperimentsMangaerSampleApp-Info.plist */,
+				C249F3291877293D00D417B2 /* ExperimentsManagerSampleApp-Info.plist */,
 				C249F32A1877293D00D417B2 /* InfoPlist.strings */,
 				C249F32D1877293D00D417B2 /* main.m */,
-				C249F32F1877293D00D417B2 /* ExperimentsMangaerSampleApp-Prefix.pch */,
+				C249F32F1877293D00D417B2 /* ExperimentsManagerSampleApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -169,9 +169,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C249F31D1877293D00D417B2 /* ExperimentsMangaerSampleApp */ = {
+		C249F31D1877293D00D417B2 /* ExperimentsManagerSampleApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C249F3501877293E00D417B2 /* Build configuration list for PBXNativeTarget "ExperimentsMangaerSampleApp" */;
+			buildConfigurationList = C249F3501877293E00D417B2 /* Build configuration list for PBXNativeTarget "ExperimentsManagerSampleApp" */;
 			buildPhases = (
 				C249F31A1877293D00D417B2 /* Sources */,
 				C249F31B1877293D00D417B2 /* Frameworks */,
@@ -181,14 +181,14 @@
 			);
 			dependencies = (
 			);
-			name = ExperimentsMangaerSampleApp;
+			name = ExperimentsManagerSampleApp;
 			productName = ExperimentsMangaerSampleApp;
-			productReference = C249F31E1877293D00D417B2 /* ExperimentsMangaerSampleApp.app */;
+			productReference = C249F31E1877293D00D417B2 /* ExperimentsManagerSampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C249F33E1877293D00D417B2 /* ExperimentsMangaerSampleAppTests */ = {
+		C249F33E1877293D00D417B2 /* ExperimentsManagerSampleAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C249F3531877293E00D417B2 /* Build configuration list for PBXNativeTarget "ExperimentsMangaerSampleAppTests" */;
+			buildConfigurationList = C249F3531877293E00D417B2 /* Build configuration list for PBXNativeTarget "ExperimentsManagerSampleAppTests" */;
 			buildPhases = (
 				C249F33B1877293D00D417B2 /* Sources */,
 				C249F33C1877293D00D417B2 /* Frameworks */,
@@ -199,9 +199,9 @@
 			dependencies = (
 				C249F3451877293E00D417B2 /* PBXTargetDependency */,
 			);
-			name = ExperimentsMangaerSampleAppTests;
+			name = ExperimentsManagerSampleAppTests;
 			productName = ExperimentsMangaerSampleAppTests;
-			productReference = C249F33F1877293D00D417B2 /* ExperimentsMangaerSampleAppTests.xctest */;
+			productReference = C249F33F1877293D00D417B2 /* ExperimentsManagerSampleAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +219,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C249F3191877293D00D417B2 /* Build configuration list for PBXProject "ExperimentsMangaerSampleApp" */;
+			buildConfigurationList = C249F3191877293D00D417B2 /* Build configuration list for PBXProject "ExperimentsManagerSampleApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -232,8 +232,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C249F31D1877293D00D417B2 /* ExperimentsMangaerSampleApp */,
-				C249F33E1877293D00D417B2 /* ExperimentsMangaerSampleAppTests */,
+				C249F31D1877293D00D417B2 /* ExperimentsManagerSampleApp */,
+				C249F33E1877293D00D417B2 /* ExperimentsManagerSampleAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -286,7 +286,7 @@
 /* Begin PBXTargetDependency section */
 		C249F3451877293E00D417B2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C249F31D1877293D00D417B2 /* ExperimentsMangaerSampleApp */;
+			target = C249F31D1877293D00D417B2 /* ExperimentsManagerSampleApp */;
 			targetProxy = C249F3441877293E00D417B2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -389,8 +389,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ExperimentsMangaerSampleApp/ExperimentsMangaerSampleApp-Prefix.pch";
-				INFOPLIST_FILE = "ExperimentsMangaerSampleApp/ExperimentsMangaerSampleApp-Info.plist";
+				GCC_PREFIX_HEADER = "ExperimentsManagerSampleApp/ExperimentsManagerSampleApp-Prefix.pch";
+				INFOPLIST_FILE = "ExperimentsManagerSampleApp/ExperimentsManagerSampleApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -402,8 +402,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ExperimentsMangaerSampleApp/ExperimentsMangaerSampleApp-Prefix.pch";
-				INFOPLIST_FILE = "ExperimentsMangaerSampleApp/ExperimentsMangaerSampleApp-Info.plist";
+				GCC_PREFIX_HEADER = "ExperimentsManagerSampleApp/ExperimentsManagerSampleApp-Prefix.pch";
+				INFOPLIST_FILE = "ExperimentsManagerSampleApp/ExperimentsManagerSampleApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -413,20 +413,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ExperimentsMangaerSampleApp.app/ExperimentsMangaerSampleApp";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ExperimentsManagerSampleApp.app/ExperimentsManagerSampleApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ExperimentsMangaerSampleApp/ExperimentsMangaerSampleApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "ExperimentsMangaerSampleApp/ExperimentsManagerSampleApp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ExperimentsMangaerSampleAppTests/ExperimentsMangaerSampleAppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ExperimentsManagerSampleAppTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -436,16 +436,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ExperimentsMangaerSampleApp.app/ExperimentsMangaerSampleApp";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ExperimentsManagerSampleApp.app/ExperimentsManagerSampleApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ExperimentsMangaerSampleApp/ExperimentsMangaerSampleApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "ExperimentsMangaerSampleApp/ExperimentsManagerSampleApp-Prefix.pch";
 				INFOPLIST_FILE = "ExperimentsMangaerSampleAppTests/ExperimentsMangaerSampleAppTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ExperimentsManagerSampleAppTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -454,7 +454,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C249F3191877293D00D417B2 /* Build configuration list for PBXProject "ExperimentsMangaerSampleApp" */ = {
+		C249F3191877293D00D417B2 /* Build configuration list for PBXProject "ExperimentsManagerSampleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C249F34E1877293E00D417B2 /* Debug */,
@@ -463,7 +463,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C249F3501877293E00D417B2 /* Build configuration list for PBXNativeTarget "ExperimentsMangaerSampleApp" */ = {
+		C249F3501877293E00D417B2 /* Build configuration list for PBXNativeTarget "ExperimentsManagerSampleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C249F3511877293E00D417B2 /* Debug */,
@@ -472,7 +472,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C249F3531877293E00D417B2 /* Build configuration list for PBXNativeTarget "ExperimentsMangaerSampleAppTests" */ = {
+		C249F3531877293E00D417B2 /* Build configuration list for PBXNativeTarget "ExperimentsManagerSampleAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C249F3541877293E00D417B2 /* Debug */,
