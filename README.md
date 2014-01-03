@@ -1,10 +1,10 @@
-## VENExperimentsManager
+## VENExperimentsManager<img src="http://f.cl.ly/items/2Y1o3X3s3X2Q1w2h0U10/AutoUpdates.png" align="right" width="260" align="right" style="padding-top:-20px; padding-left:20px;" />
 
 VENExperimentsManager enables easy definition, management and control of experiments within an iOS app including the following:
 - Define experiments and 'experiment flag' code
 - Allow users to turn experiments on and off
 - Force turn-on or off experiments
-- Make experiments user editable or not
+- Make experiments user-editable or fixed
 - Let users know whether experiments are 'stable' or 'unstable'
 
 ### Usage
@@ -21,7 +21,11 @@ VENExperiment *experiment = [VENExperimentsManager experimentWithIdentifier:VEN_
 [VENExperimentsManager experimentIsEnabled:VEN_EXPERIMENT_SOME_EXPERIMENT];
 ```
 
-The plist file defining experiments follows this format. It can also be easily configured in XCode.
+The plist file defining experiments is a dictionary of experiment-identifier : experiment-definition dictionaries. It can be easily configured in XCode.
+
+<img src="http://f.cl.ly/items/2Q2g0B2R1v0J322q1534/ExperimentsXCode.png" align="middle" width="500" />
+
+The plist will look like this..
 ```
 <plist version="1.0">
 <dict>
@@ -38,6 +42,23 @@ The plist file defining experiments follows this format. It can also be easily c
 </plist>
 ```
 
+A sample `experiments.plist` file can be found in the Sample Application.
+
+### Experiment Settings
+
+The library also contains a basic Experiment Settings View Controller which you can present to allow users to enable and disable experiments.
+
+```
+#import "VENExperimentsSettingsTVC.h"
+
+...
+
+VENExperimentsSettingsTVC *settingsTVC = [[VENExperimentsSettingsTVC alloc] init];
+[self.navigationController pushViewController:settingsTVC animated:YES];
+```
+This will give an Experiment Settings screen that looks like this...
+
+<img src="http://f.cl.ly/items/0z202o3w1V2I3Q0J0r2y/ExperimentsTop.png" align="middle" width="320" />
 ### Contributing
 
 1. Fork it
