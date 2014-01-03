@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
                     - Let users know whether experiments are 'stable' or 'unstable'
                    DESC
 
-  s.homepage     = "https://github.braintreeps.com/chrismaddern/VENExperimentsManager"
+  s.homepage     = "https://github.com/venmo/VENExperimentsManager"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Chris Maddern" => "chris@venmo.com" }
   s.platform     = :ios, '5.0'
