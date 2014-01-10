@@ -53,8 +53,21 @@ static VENExperimentsManager *experimentsManager = nil;
     for (NSDictionary *experimentDictionary in localExperiments) {
         VENExperiment *experiment = [[VENExperiment alloc] initWithIdentifier:nil
                                                    andConfigurationDictionary:experimentDictionary];
+        VENExperiment *baseExp = [self experimentWithIdentifier:experiment.identifier];
         
-        if (![self experimentWithIdentifier:experiment.identifier]) {
+        if (baseExp) {
+            if (baseExp.forceUpdate) {
+                experiment.forceUpdate = YES;
+                experiment.enabled = baseExp.enabled;
+                if (baseExp.userEditable) {
+                    experiment.userEditable = YES;
+                }
+                experiment.stable = baseExp.stable;
+            }
+            experiment.userEditable = baseExp.userEditable;
+            [self.experiments setObject:experiment forKey:experiment.identifier];
+        }
+        else {
             [self.experiments setObject:experiment forKey:experiment.identifier];
         }
     }
@@ -108,9 +121,6 @@ static VENExperimentsManager *experimentsManager = nil;
 
 
 - (VENExperiment *)experimentWithIdentifier:(NSString *)experimentIdentifier {
-    if (!self.initialized) {
-        return nil;
-    }
     
     VENExperiment *experiment = [self.experiments objectForKey:experimentIdentifier];
     return experiment;
