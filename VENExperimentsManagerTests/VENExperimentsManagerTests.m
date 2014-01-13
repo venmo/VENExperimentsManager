@@ -37,6 +37,8 @@
     XCTAssertFalse([experiment enabled], @"Incorrectly loaded base state");
     XCTAssertEqualObjects(experiment.name, @"Some Experiment Title", @"Incorrectly loaded base state");
     XCTAssertEqualObjects(experiment.identifier, @"VEN_EXPERIMENT_SOME_EXPERIMENT", @"Incorrectly loaded base state");
+    XCTAssertEqualObjects(experiment.details, @"Some details 2", @"Incorrectly loaded base state");
+    
 }
 
 
@@ -45,6 +47,7 @@
     XCTAssertFalse([experiment enabled], @"Incorrectly loaded base state");
     XCTAssertEqualObjects(experiment.name, @"Some Experiment Title", @"Incorrectly loaded base state");
     XCTAssertEqualObjects(experiment.identifier, @"VEN_EXPERIMENT_SOME_EXPERIMENT", @"Incorrectly loaded base state");
+    XCTAssertEqualObjects(experiment.details, @"Some details 2", @"Incorrectly loaded base state");
     
     [VENExperimentsManager setExperimentWithIdentifier:VEN_EXPERIMENT_SOME_EXPERIMENT isEnabled:YES];
     experiment = [VENExperimentsManager experimentWithIdentifier:VEN_EXPERIMENT_SOME_EXPERIMENT];
@@ -59,6 +62,7 @@
     XCTAssertFalse([experiment enabled], @"Incorrectly loaded base state");
     XCTAssertEqualObjects(experiment.name, @"Some Experiment Title", @"Incorrectly loaded base state");
     XCTAssertEqualObjects(experiment.identifier, @"VEN_EXPERIMENT_SOME_EXPERIMENT", @"Incorrectly loaded base state");
+    XCTAssertEqualObjects(experiment.details, @"Some details 2", @"Incorrectly loaded base state");
     
     [VENExperimentsManager setExperimentWithIdentifier:VEN_EXPERIMENT_SOME_EXPERIMENT isEnabled:YES];
     experiment = [VENExperimentsManager experimentWithIdentifier:VEN_EXPERIMENT_SOME_EXPERIMENT];
