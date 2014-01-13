@@ -4,7 +4,10 @@
 
 - (void)configureWithExperiment:(VENExperiment *)experiment {
     self.experiment = experiment;
-    self.nameLabel.text = experiment.name;
+    
+    self.nameLabel.text     = experiment.name;
+    self.detailsLabel.text  = experiment.details;
+    
     [self.enabledSwitch setOn:experiment.enabled animated:NO];
     [self.enabledSwitch setEnabled:experiment.userEditable];
     
@@ -12,6 +15,9 @@
         [self.enabledSwitch setOn:NO];
         [self.enabledSwitch setEnabled:NO];
     }
+    
+    self.detailsLabel.numberOfLines = 3;
+    [self.detailsLabel sizeToFit];
 }
 
 

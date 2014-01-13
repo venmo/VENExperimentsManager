@@ -12,9 +12,13 @@
 		<true/>
 		<key>VEN_EXPERIMENT_USER_EDITABLE</key>
 		<true/>
+		<key>VEN_EXPERIMENT_DETAILS</key>
+		<string>Add a snowy overlay to the whole Venmo app to get your Christmas vibe!</string>
 	</dict>
 	<key>VEN_EXPERIMENT_AUTO_UPDATE</key>
 	<dict>
+		<key>VEN_EXPERIMENT_DETAILS</key>
+		<string>Automatically notifies you of available app updates for your current &apos;track&apos;. This cannot be disabled on internal builds.</string>
 		<key>VEN_EXPERIMENT_NAME</key>
 		<string>Automatic Updates</string>
 		<key>VEN_EXPERIMENT_ENABLED</key>
@@ -28,6 +32,8 @@
 	</dict>
 	<key>VEN_EXPERIMENT_SOME_EXPERIMENT</key>
 	<dict>
+		<key>VEN_EXPERIMENT_DETAILS</key>
+		<string>This is an experiment which we don&apos;t want to talk about.. ;)</string>
 		<key>VEN_EXPERIMENT_NAME</key>
 		<string>Some Experiment</string>
 		<key>VEN_EXPERIMENT_ENABLED</key>
@@ -41,6 +47,8 @@
 	<dict>
 		<key>VEN_EXPERIMENT_NAME</key>
 		<string>Service Maintenance Mode</string>
+		<key>VEN_EXPERIMENT_DETAILS</key>
+		<string>Improved support for service error states</string>
 		<key>VEN_EXPERIMENT_STABLE</key>
 		<false/>
 		<key>VEN_EXPERIMENT_ENABLED</key>
