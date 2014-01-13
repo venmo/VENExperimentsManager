@@ -14,6 +14,7 @@
 #define VEN_KEY_EXPERIMENT_USER_EDITABLE    @"VEN_EXPERIMENT_USER_EDITABLE"
 #define VEN_KEY_EXPERIMENT_FORCE_UPDATE     @"VEN_EXPERIMENT_FORCE_UPDATE"
 #define VEN_KEY_EXPERIMENT_STABLE           @"VEN_EXPERIMENT_STABLE"
+#define VEN_KEY_EXPERIMENT_DETAILS          @"VEN_EXPERIMENT_DETAILS"
 
 @implementation VENExperiment
 
@@ -29,7 +30,8 @@
             self.identifier = [dictionary objectForKey:VEN_KEY_EXPERIMENT_IDENTIFIER];
         }
         
-        self.name       = [dictionary objectForKey:VEN_KEY_EXPERIMENT_NAME] ?: @"Unknown";
+        self.name           = [dictionary objectForKey:VEN_KEY_EXPERIMENT_NAME] ?: @"Unknown";
+        self.details    = [dictionary objectForKey:VEN_KEY_EXPERIMENT_DETAILS] ?: @"No experiment details";
         
         NSNumber *boolNumber = [dictionary objectForKey:VEN_KEY_EXPERIMENT_ENABLED_VALUE];
         if (boolNumber != nil) {
@@ -63,6 +65,7 @@
     [dictionary setObject:[NSNumber numberWithBool:self.stable] forKey:VEN_KEY_EXPERIMENT_STABLE];
     [dictionary setObject:self.identifier forKey:VEN_KEY_EXPERIMENT_IDENTIFIER];
     [dictionary setObject:self.name forKey:VEN_KEY_EXPERIMENT_NAME];
+    [dictionary setObject:self.details forKey:VEN_KEY_EXPERIMENT_DETAILS];
     
     return [NSDictionary dictionaryWithDictionary:dictionary];
 }
