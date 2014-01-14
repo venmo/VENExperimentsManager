@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     NSArray *experiments = [VENExperimentsManager allExperiments];
     self.stableExperiments = [NSMutableArray array];
     self.unstableExperiments = [NSMutableArray array];
@@ -56,6 +56,14 @@
 
 - (NSString *)title {
     return @"Experiments";
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([[tableView indexPathForSelectedRow] isEqual:indexPath]) {
+        return 100;
+    }
+    return 44;
 }
 
 
@@ -113,7 +121,8 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [tableView beginUpdates];
+    [tableView endUpdates];
 }
 
 @end

@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *details;
 @property (nonatomic, strong) NSDictionary *properties;
 @property (nonatomic) BOOL enabled;
 @property (nonatomic) BOOL userEditable;

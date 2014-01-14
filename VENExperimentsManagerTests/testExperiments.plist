@@ -12,11 +12,15 @@
 		<false/>
 		<key>VEN_EXPERIMENT_FORCE_UPDATE</key>
 		<true/>
+		<key>VEN_EXPERIMENT_DETAILS</key>
+		<string>Some details</string>
 	</dict>
 	<key>VEN_EXPERIMENT_SOME_EXPERIMENT</key>
 	<dict>
 		<key>VEN_EXPERIMENT_NAME</key>
 		<string>Some Experiment Title</string>
+		<key>VEN_EXPERIMENT_DETAILS</key>
+		<string>Some details 2</string>
 		<key>VEN_EXPERIMENT_ENABLED</key>
 		<false/>
 		<key>VEN_EXPERIMENT_USER_EDITABLE</key>
@@ -30,6 +34,8 @@
 		<false/>
 		<key>VEN_EXPERIMENT_USER_CHANGEABLE</key>
 		<true/>
+		<key>VEN_EXPERIMENT_DETAILS</key>
+		<string>Some details 3</string>
 	</dict>
 </dict>
 </plist>

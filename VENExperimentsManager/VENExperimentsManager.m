@@ -68,9 +68,10 @@ static VENExperimentsManager *experimentsManager = nil;
                 if (baseExp.userEditable) {
                     experiment.userEditable = YES;
                 }
-                experiment.stable = baseExp.stable;
+                experiment.stable   = baseExp.stable;
             }
             experiment.userEditable = baseExp.userEditable;
+            experiment.details  = baseExp.details;
             [self.experiments setObject:experiment forKey:experiment.identifier];
         }
         else {
