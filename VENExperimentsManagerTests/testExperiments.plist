@@ -6,7 +6,7 @@
 	<dict>
 		<key>VEN_EXPERIMENT_NAME</key>
 		<string>Automatic Updates</string>
-		<key>VEN_EXPERIMENT_DEFAULT_VALUE</key>
+		<key>VEN_EXPERIMENT_ENABLED</key>
 		<true/>
 		<key>VEN_EXPERIMENT_USER_CHANGEABLE</key>
 		<false/>

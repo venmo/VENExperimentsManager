@@ -10,6 +10,14 @@
 #import "VENExperimentsManager.h"
 #import "VENTestExperiments.h"
 
+@interface VENExperimentsManager (Private)
+
+- (BOOL)loadLocalConfigurationWithDefault:(NSString *)plistName;
+- (VENExperiment *)experimentWithIdentifier:(NSString *)experimentIdentifier;
+- (BOOL)experimentIsEnabled:(NSString *)experimentIdentifier;
+
+@end
+
 @interface VENExperimentsManagerTests : XCTestCase
 
 @end
@@ -37,6 +45,10 @@
     XCTAssertFalse([experiment enabled], @"Incorrectly loaded base state");
     XCTAssertEqualObjects(experiment.name, @"Some Experiment Title", @"Incorrectly loaded base state");
     XCTAssertEqualObjects(experiment.identifier, @"VEN_EXPERIMENT_SOME_EXPERIMENT", @"Incorrectly loaded base state");
+    
+    experiment = [VENExperimentsManager experimentWithIdentifier:VEN_EXPERIMENT_AUTO_UPDATE];
+    XCTAssertNotNil(experiment, @"Should return an experiment that exists");
+    XCTAssertTrue([experiment enabled], @"Should load correctly with correct test file");
 }
 
 
@@ -69,4 +81,29 @@
     XCTAssertFalse([experiment enabled], @"Incorrectly loaded base state");
 }
 
+
+- (void)testNoConfigurationCausesNoTests {
+    VENExperimentsManager *experimentsManager = [[VENExperimentsManager alloc] init];
+    BOOL configured = [experimentsManager loadLocalConfigurationWithDefault:@"testExperiments"];
+    
+    XCTAssertTrue(configured, @"Could not configure new experiments manager");
+    
+    VENExperiment *experiment = [experimentsManager experimentWithIdentifier:VEN_EXPERIMENT_SOME_EXPERIMENT];
+    XCTAssertFalse([experiment enabled], @"Incorrectly loaded base state");
+    XCTAssertEqualObjects(experiment.name, @"Some Experiment Title", @"Incorrectly loaded base state");
+    XCTAssertEqualObjects(experiment.identifier, @"VEN_EXPERIMENT_SOME_EXPERIMENT", @"Incorrectly loaded base state");
+    experiment = [experimentsManager experimentWithIdentifier:VEN_EXPERIMENT_AUTO_UPDATE];
+    XCTAssertNotNil(experiment, @"Should return an experiment that exists");
+    XCTAssertTrue([experiment enabled], @"Should load correctly with correct test file");
+    
+    experimentsManager = [[VENExperimentsManager alloc] init];
+    configured = [experimentsManager loadLocalConfigurationWithDefault:@"testExperimentsFAKE"];
+    
+    XCTAssertFalse(configured, @"Could not configure new experiments manager");
+    experiment = [experimentsManager experimentWithIdentifier:VEN_EXPERIMENT_SOME_EXPERIMENT];
+    XCTAssertNil(experiment, @"Should not return an experiment that does not exist");
+    XCTAssertFalse([experiment enabled], @"enabled on nil should return FALSE");
+    XCTAssertFalse([experimentsManager experimentIsEnabled:VEN_EXPERIMENT_AUTO_UPDATE], @"Should not enable a non-existant experiment");
+    
+}
 @end

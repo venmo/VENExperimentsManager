@@ -31,7 +31,9 @@ static VENExperimentsManager *experimentsManager = nil;
     
     dispatch_once(&once, ^ {
         experimentsManager = [[self alloc] init];
-        [experimentsManager loadLocalConfigurationWithDefault:plistName];
+        if (![experimentsManager loadLocalConfigurationWithDefault:plistName]) {
+            experimentsManager = nil;
+        }
     });
 }
 
@@ -46,6 +48,10 @@ static VENExperimentsManager *experimentsManager = nil;
     self.configurationFileName  = plistName;
     
     self.experiments = [self initialStateForPlist:plistName];
+    
+    if (!self.experiments || ![self.experiments count]) {
+        return NO;
+    }
     
     NSUserDefaults *defaults    = [NSUserDefaults standardUserDefaults];
     NSArray *localExperiments   = [defaults objectForKey:[self persistenceKeyForCurrentConfigurationFile]];
@@ -165,7 +171,7 @@ static VENExperimentsManager *experimentsManager = nil;
 
 
 + (BOOL)experimentIsEnabled:(NSString *)experimentIdentifier {
-    return [[[self sharedExperimentsManager] experimentWithIdentifier:experimentIdentifier] enabled];
+    return [[[self sharedExperimentsManager] experimentWithIdentifier:experimentIdentifier] enabled] ?: NO;
 }
 
 
