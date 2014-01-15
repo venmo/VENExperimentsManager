@@ -25,26 +25,21 @@ The plist file defining experiments is a dictionary of experiment-identifier : e
 
 <img src="http://f.cl.ly/items/2Q2g0B2R1v0J322q1534/ExperimentsXCode.png" align="middle" width="500" />
 
-The plist will look like this..
-```
-<plist version="1.0">
-<dict>
-	<key>VEN_EXPERIMENT_SOME_EXPERIMENT</key>
-	<dict>
-		<key>VEN_EXPERIMENT_NAME</key>
-		<string>Some Experiment Title</string>
-		<key>VEN_EXPERIMENT_ENABLED</key>
-		<false/>
-		<key>VEN_EXPERIMENT_USER_EDITABLE</key>
-		<true/>
-	</dict>
-</dict>
-</plist>
-```
 
 A sample `experiments.plist` file can be found in the Sample Application.
 
-### Experiment Settings
+### Key descriptions
+`VEN_EXPERIMENT_NAME`          : `String`  - The name of the experiment as it will appear in the Settings view
+
+`VEN_EXPERIMENT_STABLE`        : `Boolean` - Whether the experiment is stable or not (grouped in Settings view)
+
+`VEN_EXPERIMENT_ENABLED`       : `Boolean` - The default enabled state for the experiment
+
+`VEN_EXPERIMENT_USER_EDITABLE` : `Boolean` - Whether the user can change the state of the experiment
+
+`VEN_EXPERIMENT_FORCE_UPDATE`  : `Boolean` - If this is YES, the experiment will be force-moved to it's default state every open.
+
+### Experiment Settings View Controller
 
 The library also contains a basic Experiment Settings View Controller which you can present to allow users to enable and disable experiments.
 
@@ -58,7 +53,7 @@ VENExperimentsSettingsTVC *settingsTVC = [[VENExperimentsSettingsTVC alloc] init
 ```
 This will give an Experiment Settings screen that looks like this...
 
-<img src="http://f.cl.ly/items/0z202o3w1V2I3Q0J0r2y/ExperimentsTop.png" align="middle" width="320" />
+<img src="http://f.cl.ly/items/0Z3R2H1f1z3t1H3R3g3q/experiments.png" align="middle" width="320" />
 ### Contributing
 
 1. Fork it
