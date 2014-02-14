@@ -9,12 +9,12 @@ VENExperimentsManager enables easy definition, management and control of experim
 
 ### Usage
 
-```
+```objc
 [VENExperimentsManager startExperimentsManagerWithPlistName:@"testExperiments"];
 ```
 
 Then you can access experiments as follows..
-```
+```objc
 VENExperiment *experiment = [VENExperimentsManager experimentWithIdentifier:VEN_EXPERIMENT_SOME_EXPERIMENT];
 
 // Or if you just want to know if it's enabled
@@ -43,7 +43,7 @@ A sample `experiments.plist` file can be found in the Sample Application.
 
 The library also contains a basic Experiment Settings View Controller which you can present to allow users to enable and disable experiments.
 
-```
+```objc
 #import "VENExperimentsSettingsTVC.h"
 
 ...
