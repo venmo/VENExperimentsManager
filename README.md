@@ -21,6 +21,25 @@ VENExperiment *experiment = [VENExperimentsManager experimentWithIdentifier:VEN_
 [VENExperimentsManager experimentIsEnabled:VEN_EXPERIMENT_SOME_EXPERIMENT];
 ```
 
+Multi-option experiments (new in `v0.2.0`) can be used as follows..
+
+```objc
+NSString *selectedOptionForExperiment = [VENExperimentsManager selectedOptionForExperiment:VEN_EXPERIMENT_SOME_EXPERIMENT];
+
+// Or you can get the experiment and inspect it..
+VENExperiment *experiment = [VENExperimentsManager experimentWithIdentifier:VEN_EXPERIMENT_SOME_EXPERIMENT];
+
+// Determine if the experiment has options
+BOOL hasOptions = [experiment supportsOptions];
+
+// Get the selected option
+NSString *selectedOption = [experiment selectedOption];
+
+// Get the readable description of the selected option
+[experiment selectedOptionDescription];
+
+```
+
 The plist file defining experiments is a dictionary of experiment-identifier : experiment-definition dictionaries. It can be easily configured in XCode.
 
 <img src="http://f.cl.ly/items/2Q2g0B2R1v0J322q1534/ExperimentsXCode.png" align="middle" width="500" />
@@ -38,6 +57,10 @@ A sample `experiments.plist` file can be found in the Sample Application.
 `VEN_EXPERIMENT_USER_EDITABLE` : `Boolean` - Whether the user can change the state of the experiment
 
 `VEN_EXPERIMENT_FORCE_UPDATE`  : `Boolean` - If this is YES, the experiment will be force-moved to it's default state every open.
+
+`VEN_EXPERIMENT_OPTIONS`       : `Dictionary` - Key-Value pairs of `KEY` : `Readable description` for options for this experiment.
+
+`VEN_EXPERIMENT_DEFAULT_OPTION`: `String` - The key of the default option in the dictionary of options
 
 ### Experiment Settings View Controller
 
