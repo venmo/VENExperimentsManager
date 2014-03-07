@@ -4,18 +4,11 @@
 
 @interface VENExperimentsSettingsTVC ()
 
+@property (nonatomic, strong) NSIndexPath *lastSelectedIndexPath;
+
 @end
 
 @implementation VENExperimentsSettingsTVC
-
-- (id)initWithStyle:(UITableViewStyle)style {
-    self = [super initWithStyle:style];
-    if (self) {
-        
-    }
-    return self;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +26,8 @@
         }
     }
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"VENExperimentTableViewCell" bundle:nil] forCellReuseIdentifier:@"VENExperimentTableViewCell"];
+    
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     UILabel *label = [[UILabel alloc] init];
     label.textAlignment = NSTextAlignmentCenter;
@@ -44,8 +39,7 @@
     [footerView addSubview:label];
     
     self.tableView.tableFooterView = footerView;
-    
-    [self.tableView registerNib:[UINib nibWithNibName:@"VENExperimentTableViewCell" bundle:nil] forCellReuseIdentifier:@"VENExperimentTableViewCell"];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
 
 
@@ -61,7 +55,15 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([[tableView indexPathForSelectedRow] isEqual:indexPath]) {
-        return 100;
+        VENExperiment *experiment;
+        if (indexPath.section == 0) {
+            experiment = self.stableExperiments[indexPath.row];
+        }
+        else if (indexPath.section == 1) {
+            experiment = self.unstableExperiments[indexPath.row];
+        }
+        
+        return 100 + ([experiment supportsOptions] ? 50 : 0);
     }
     return 44;
 }
@@ -121,6 +123,15 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([indexPath isEqual:self.lastSelectedIndexPath]) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        self.lastSelectedIndexPath = nil;
+    }
+    else {
+        self.lastSelectedIndexPath = indexPath;
+    }
+    
     [tableView beginUpdates];
     [tableView endUpdates];
 }
