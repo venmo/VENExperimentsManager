@@ -2,6 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>VEN_EXPERIMENT_PAYMENT_SCREEN</key>
+	<dict>
+		<key>VEN_EXPERIMENT_NAME</key>
+		<string>New Payment Screen</string>
+		<key>VEN_EXPERIMENT_DEFAULT_VALUE</key>
+		<true/>
+		<key>VEN_EXPERIMENT_USER_EDITABLE</key>
+		<true/>
+		<key>VEN_EXPERIMENT_DETAILS</key>
+		<string>New payment experiments</string>
+		<key>VEN_EXPERIMENT_DEFAULT_OPTION</key>
+		<string>VEN_EXPERIMENT_PAYMENT_SCREEN_PROTO_1</string>
+		<key>VEN_EXPERIMENT_OPTIONS</key>
+		<dict>
+			<key>VEN_EXPERIMENT_PAYMENT_SCREEN_DEFAULT</key>
+			<string>Default payment screen</string>
+			<key>VEN_EXPERIMENT_PAYMENT_SCREEN_PROTO_1</key>
+			<string>Prototype 1</string>
+			<key>VEN_EXPERIMENT_PAYMENT_SCREEN_PROTO_2</key>
+			<string>Prototype 2</string>
+		</dict>
+	</dict>
 	<key>VEN_EXPERIMENT_SNOW</key>
 	<dict>
 		<key>VEN_EXPERIMENT_NAME</key>

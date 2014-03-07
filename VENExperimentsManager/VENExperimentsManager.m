@@ -1,11 +1,3 @@
-//
-//  VENExperimentsManager.m
-//  VenmoClient
-//
-//  Created by Chris Maddern on 9/29/13.
-//  Copyright (c) 2013 Venmo. All rights reserved.
-//
-
 #import "VENExperimentsManager.h"
 #import "VENExperiment.h"
 
@@ -31,7 +23,7 @@ static VENExperimentsManager *experimentsManager = nil;
     
     dispatch_once(&once, ^ {
         experimentsManager = [[self alloc] init];
-        if (![experimentsManager loadLocalConfigurationWithDefault:plistName]) {
+        if (![experimentsManager startExperimentsManagerWithPlistName:plistName]) {
             experimentsManager = nil;
         }
     });
@@ -43,7 +35,7 @@ static VENExperimentsManager *experimentsManager = nil;
 }
 
 
-- (BOOL)loadLocalConfigurationWithDefault:(NSString *)plistName {
+- (BOOL)startExperimentsManagerWithPlistName:(NSString *)plistName {
     self.initialized    = NO;
     self.configurationFileName  = plistName;
     
@@ -59,23 +51,31 @@ static VENExperimentsManager *experimentsManager = nil;
     for (NSDictionary *experimentDictionary in localExperiments) {
         VENExperiment *experiment = [[VENExperiment alloc] initWithIdentifier:nil
                                                    andConfigurationDictionary:experimentDictionary];
-        VENExperiment *baseExp = [self experimentWithIdentifier:experiment.identifier];
+        VENExperiment *baseExp = self.experiments[experiment.identifier];
         
         if (baseExp) {
+            
+            // Always update some basic fields
+            experiment.userEditable = baseExp.userEditable;
+            experiment.details      = baseExp.details;
+            experiment.options      = baseExp.options;
+            
             if (baseExp.forceUpdate) {
                 experiment.forceUpdate = YES;
                 experiment.enabled = baseExp.enabled;
-                if (baseExp.userEditable) {
-                    experiment.userEditable = YES;
-                }
+                experiment.userEditable = baseExp.userEditable;
+                experiment.selectedOption = baseExp.selectedOption;
                 experiment.stable   = baseExp.stable;
             }
-            experiment.userEditable = baseExp.userEditable;
-            experiment.details  = baseExp.details;
-            [self.experiments setObject:experiment forKey:experiment.identifier];
+            // If the new options make the previous selection invalid
+            else if (!experiment.options[experiment.selectedOption]) {
+                experiment.selectedOption = baseExp.selectedOption;
+            }
+            
+            self.experiments[experiment.identifier] = experiment;
         }
         else {
-            [self.experiments setObject:experiment forKey:experiment.identifier];
+            // Do not add experiments in UserDefaults which are not in the plist
         }
     }
     
@@ -95,7 +95,7 @@ static VENExperimentsManager *experimentsManager = nil;
     
     NSMutableDictionary *experimentObjects = [NSMutableDictionary dictionary];
     for (NSString *experimentIdentifier in experimentsDictionary) {
-        VENExperiment *experiment = [[VENExperiment alloc] initWithIdentifier:experimentIdentifier andConfigurationDictionary:[experimentsDictionary objectForKey:experimentIdentifier]];
+        VENExperiment *experiment = [[VENExperiment alloc] initWithIdentifier:experimentIdentifier andConfigurationDictionary:experimentsDictionary[experimentIdentifier]];
         if (experiment) {
             [experimentObjects setObject:experiment forKey:experimentIdentifier];
         }
@@ -113,7 +113,7 @@ static VENExperimentsManager *experimentsManager = nil;
     NSMutableArray *experimentDictionaries = [NSMutableArray array];
     
     for (NSString *experimentIdentifier in [self.experiments allKeys]) {
-        VENExperiment *experiment = [self.experiments objectForKey:experimentIdentifier];
+        VENExperiment *experiment = self.experiments[experimentIdentifier];
         [experimentDictionaries addObject:[experiment dictionaryRepresentation]];
     }
     
@@ -128,13 +128,20 @@ static VENExperimentsManager *experimentsManager = nil;
 
 
 - (VENExperiment *)experimentWithIdentifier:(NSString *)experimentIdentifier {
+    if (![[self class] experimentationEnabled]) {
+        return NO;
+    }
     
-    VENExperiment *experiment = [self.experiments objectForKey:experimentIdentifier];
+    VENExperiment *experiment = self.experiments[experimentIdentifier];
     return experiment;
 }
 
 
 - (BOOL)experimentIsEnabled:(NSString *)experimentIdentifier {
+    if (![[self class] experimentationEnabled]) {
+        return NO;
+    }
+    
     return [[self experimentWithIdentifier:experimentIdentifier] enabled];
 }
 
@@ -142,7 +149,17 @@ static VENExperimentsManager *experimentsManager = nil;
 - (void)setExperimentWithIdentifier:(NSString *)experimentIdentifier isEnabled:(BOOL)enabled {
     VENExperiment *experiment = [self experimentWithIdentifier:experimentIdentifier];
     [experiment setEnabled:enabled];
-    [self.experiments setObject:experiment forKey:experiment.identifier];
+    self.experiments[experiment.identifier] = experiment;
+    
+    [self persistExperimentStates];
+}
+
+
+- (void)setSelectdOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
+                                    selectedOptions:(NSString *)selectedOption {
+    VENExperiment *experiment = [self experimentWithIdentifier:experimentIdentifier];
+    experiment.selectedOption = selectedOption;
+    self.experiments[experiment.identifier] = experiment;
     
     [self persistExperimentStates];
 }
@@ -170,14 +187,23 @@ static VENExperimentsManager *experimentsManager = nil;
     return [[self sharedExperimentsManager] experimentWithIdentifier:experimentIdentifier];
 }
 
-
 + (BOOL)experimentIsEnabled:(NSString *)experimentIdentifier {
     return [[[self sharedExperimentsManager] experimentWithIdentifier:experimentIdentifier] enabled] ?: NO;
+}
+
++ (NSString *)selectedOptionForExperiment:(NSString *)experimentIdentifier {
+    return [[[self sharedExperimentsManager] experimentWithIdentifier:experimentIdentifier] selectedOption];
 }
 
 
 + (void)setExperimentWithIdentifier:(NSString *)experimentIdentifier isEnabled:(BOOL)enabled {
     [[self sharedExperimentsManager] setExperimentWithIdentifier:experimentIdentifier isEnabled:enabled];
+}
+
++ (void)setSelectdOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
+                                    selectedOption:(NSString *)selectedOption {
+    [[self sharedExperimentsManager] setSelectdOptionForExperimentWithIdentifier:experimentIdentifier
+                                                                 selectedOptions:selectedOption];
 }
 
 
@@ -190,5 +216,9 @@ static VENExperimentsManager *experimentsManager = nil;
     return [[self sharedExperimentsManager] allExperiments];
 }
 
+
++ (BOOL)experimentationEnabled {
+    return [[VENExperimentsManager sharedExperimentsManager] initialized];
+}
 
 @end
