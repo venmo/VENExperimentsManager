@@ -125,6 +125,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if ([indexPath isEqual:self.lastSelectedIndexPath]) {
+        [self.view endEditing:YES];
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         self.lastSelectedIndexPath = nil;
     }

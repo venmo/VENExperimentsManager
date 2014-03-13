@@ -6,18 +6,16 @@
 	<dict>
 		<key>VEN_EXPERIMENT_NAME</key>
 		<string>New Payment Screen</string>
-		<key>VEN_EXPERIMENT_DEFAULT_VALUE</key>
+		<key>VEN_EXPERIMENT_ENABLED</key>
 		<true/>
 		<key>VEN_EXPERIMENT_USER_EDITABLE</key>
 		<true/>
+		<key>VEN_EXPERIMENT_SHOULD_RANDOMIZE_DEFAULT</key>
+		<true/>
 		<key>VEN_EXPERIMENT_DETAILS</key>
 		<string>New payment experiments</string>
-		<key>VEN_EXPERIMENT_DEFAULT_OPTION</key>
-		<string>VEN_EXPERIMENT_PAYMENT_SCREEN_PROTO_1</string>
 		<key>VEN_EXPERIMENT_OPTIONS</key>
 		<dict>
-			<key>VEN_EXPERIMENT_PAYMENT_SCREEN_DEFAULT</key>
-			<string>Default payment screen</string>
 			<key>VEN_EXPERIMENT_PAYMENT_SCREEN_PROTO_1</key>
 			<string>Prototype 1</string>
 			<key>VEN_EXPERIMENT_PAYMENT_SCREEN_PROTO_2</key>

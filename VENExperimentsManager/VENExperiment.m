@@ -2,13 +2,14 @@
 
 #define VEN_KEY_EXPERIMENT_IDENTIFIER       @"VEN_EXPERIMENT_IDENTIFIER"
 #define VEN_KEY_EXPERIMENT_NAME             @"VEN_EXPERIMENT_NAME"
-#define VEN_KEY_EXPERIMENT_ENABLED_VALUE    @"VEN_EXPERIMENT_ENABLED"
+#define VEN_KEY_EXPERIMENT_ENABLED          @"VEN_EXPERIMENT_ENABLED"
 #define VEN_KEY_EXPERIMENT_USER_EDITABLE    @"VEN_EXPERIMENT_USER_EDITABLE"
 #define VEN_KEY_EXPERIMENT_FORCE_UPDATE     @"VEN_EXPERIMENT_FORCE_UPDATE"
 #define VEN_KEY_EXPERIMENT_STABLE           @"VEN_EXPERIMENT_STABLE"
 #define VEN_KEY_EXPERIMENT_DETAILS          @"VEN_EXPERIMENT_DETAILS"
 #define VEN_KEY_EXPERIMENT_DEFAULT_OPTION   @"VEN_EXPERIMENT_DEFAULT_OPTION"
 #define VEN_KEY_EXPERIMENT_OPTIONS          @"VEN_EXPERIMENT_OPTIONS"
+#define VEN_KEY_EXPERIMENT_SHOULD_RANDOMIZE_DEFAULT   @"VEN_EXPERIMENT_SHOULD_RANDOMIZE_DEFAULT"
 
 @implementation VENExperiment
 
@@ -33,7 +34,7 @@
             self.selectedOption = selectedOption;
         }
         
-        NSNumber *boolNumber = dictionary[VEN_KEY_EXPERIMENT_ENABLED_VALUE];
+        NSNumber *boolNumber = dictionary[VEN_KEY_EXPERIMENT_ENABLED];
         if (boolNumber != nil) {
             self.enabled = [boolNumber boolValue];
         }
@@ -52,6 +53,16 @@
         if (boolNumber != nil) {
             self.stable = [boolNumber boolValue];
         }
+        
+        if ([self.options count] && !self.selectedOption && [dictionary[VEN_KEY_EXPERIMENT_SHOULD_RANDOMIZE_DEFAULT] boolValue]) {
+            u_int32_t randomUpperBound = (int)[self.options count];
+            unsigned long randomOptionIndex = arc4random_uniform(randomUpperBound);
+            NSString *randomOption = [self.options allKeys][randomOptionIndex];
+            self.selectedOption = randomOption;
+        }
+        else if ([self.options count] && !self.selectedOption) {
+            self.selectedOption = [[self.options allKeys] firstObject];
+        }
     }
     return self;
 }
@@ -65,7 +76,7 @@
     dictionary[VEN_KEY_EXPERIMENT_STABLE]           = [NSNumber numberWithBool:self.stable];
     dictionary[VEN_KEY_EXPERIMENT_FORCE_UPDATE]     = [NSNumber numberWithBool:self.forceUpdate];
     dictionary[VEN_KEY_EXPERIMENT_USER_EDITABLE]    = [NSNumber numberWithBool:self.userEditable];
-    dictionary[VEN_KEY_EXPERIMENT_ENABLED_VALUE]    = [NSNumber numberWithBool:self.enabled];
+    dictionary[VEN_KEY_EXPERIMENT_ENABLED]          = [NSNumber numberWithBool:self.enabled];
     
     
     if (self.details) {
