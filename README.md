@@ -1,4 +1,4 @@
-## VENExperimentsManager<img src="http://f.cl.ly/items/2Y1o3X3s3X2Q1w2h0U10/AutoUpdates.png" align="right" width="260" align="right" style="padding-top:-20px; padding-left:20px;" />
+## VENExperimentsManager
 
 VENExperimentsManager enables easy definition, management and control of experiments within an iOS app including the following:
 - Define experiments and 'experiment flag' code
@@ -6,6 +6,8 @@ VENExperimentsManager enables easy definition, management and control of experim
 - Force turn-on or off experiments
 - Make experiments user-editable or fixed
 - Let users know whether experiments are 'stable' or 'unstable'
+
+<img src="http://f.cl.ly/items/0Z3R2H1f1z3t1H3R3g3q/experiments.png" align="middle" width="320" />
 
 ### Usage
 
