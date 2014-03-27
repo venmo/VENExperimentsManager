@@ -79,6 +79,10 @@ This will give an Experiment Settings screen that looks like this...
 <img src="http://f.cl.ly/items/0Z3R2H1f1z3t1H3R3g3q/experiments.png" align="middle" width="320" />
 ### Contributing
 
+We'd love to see your ideas for improving this library! The best way to contribute is by submitting a pull request. We'll do our best to respond to your patch as soon as possible. You can also submit a new Github issue if you find bugs or have questions. 
+
+Please make sure to follow our general coding style and add test coverage for new features!
+
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Added some feature'`)
