@@ -1,5 +1,7 @@
 ## VENExperimentsManager
 
+[![Build Status](https://travis-ci.org/venmo/VENExperimentsManager.svg?branch=master)](https://travis-ci.org/venmo/VENExperimentsManager)
+
 VENExperimentsManager enables easy definition, management and control of experiments within an iOS app including the following:
 - Define experiments and 'experiment flag' code
 - Allow users to turn experiments on and off
