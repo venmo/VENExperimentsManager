@@ -66,17 +66,17 @@ extern NSString *const VENExperimentOptionNotificationUserInfoKey;
                                       selectedOption:(NSString *)selectedOption;
 
 /**
- Returns the key for a given experiment identifier for the NSNotification that is called whenever the enabled switch is toggled
+ Returns the name of the NSNotification for a given experiment identifier that is called whenever the enabled switch is toggled
  @return NSString NSNotification key to listen for when the enabled switch is toggled for the given experiment idenifier
  **/
-+ (NSString *)experimentEnabledChangedNotificationsKeyForIdentifier:(NSString *)identifier;
++ (NSString *)enabledChangedNotificationNameForIdentifier:(NSString *)identifier;
 
 
 /**
- Returns the key for a given experiment identifier for the NSNotification that is called whenever an experiment option is selected
+ Returns the name of the NSNotification for a given experiment identifier that is called whenever an experiment option is selected
  @return NSString NSNotification key to listen for when an option is selected for the given experiment identifier
  **/
-+ (NSString *)experimentOptionChangedNotificationsKeyForIdentifier:(NSString *)identifier;
++ (NSString *)optionChangedNotificationNameForIdentifier:(NSString *)identifier;
 
 
 @end

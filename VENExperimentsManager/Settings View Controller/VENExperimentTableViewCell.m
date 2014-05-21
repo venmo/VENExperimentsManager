@@ -37,7 +37,7 @@
     BOOL isON = [((UISwitch *)sender) isOn];
     [VENExperimentsManager setExperimentWithIdentifier:self.experiment.identifier isEnabled:isON];
     NSDictionary *userInfo = @{VENExperimentEnabledNotificationUserInfoKey: @(isON)};
-    [[NSNotificationCenter defaultCenter] postNotificationName:[VENExperimentsManager experimentEnabledChangedNotificationsKeyForIdentifier:self.experiment.identifier]
+    [[NSNotificationCenter defaultCenter] postNotificationName:[VENExperimentsManager enabledChangedNotificationNameForIdentifier:self.experiment.identifier]
                                                         object:nil
                                                       userInfo:userInfo];
 }
@@ -66,7 +66,7 @@
                                                          selectedOption:selectedOption];
     [self.optionsField setText:[self.experiment selectedOptionDescription]];
     NSDictionary *userInfo = @{VENExperimentOptionNotificationUserInfoKey: selectedOption};
-    [[NSNotificationCenter defaultCenter] postNotificationName:[VENExperimentsManager experimentOptionChangedNotificationsKeyForIdentifier:self.experiment.identifier]
+    [[NSNotificationCenter defaultCenter] postNotificationName:[VENExperimentsManager optionChangedNotificationNameForIdentifier:self.experiment.identifier]
                                                         object:nil
                                                       userInfo:userInfo];
 
