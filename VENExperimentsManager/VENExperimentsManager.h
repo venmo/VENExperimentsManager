@@ -42,7 +42,7 @@
  Determines whether experimentation is enabled
  @return BOOL indicating whether experimentation is enabled
  @note when experimentation is not enabled, experimentIsEnabled: will return NO for all experiments
-**/
+ **/
 + (BOOL)experimentationEnabled;
 
 
@@ -59,7 +59,7 @@
  @param experimentIdentifier The experiment to set the enabled state for
  @param selectedOption The key for the selected experiment option
  **/
-+ (void)setSelectdOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
-                                    selectedOption:(NSString *)selectedOption;
++ (void)setSelectedOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
+                                      selectedOption:(NSString *)selectedOption;
 
 @end
