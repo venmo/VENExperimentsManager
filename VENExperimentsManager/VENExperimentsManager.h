@@ -1,6 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "VENExperiment.h"
 
+extern NSString *const VENExperimentEnabledNotificationUserInfoKey;
+extern NSString *const VENExperimentOptionNotificationUserInfoKey;
+
 @interface VENExperimentsManager : NSObject
 
 @property (nonatomic) BOOL initialized;
@@ -61,5 +64,19 @@
  **/
 + (void)setSelectdOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
                                     selectedOption:(NSString *)selectedOption;
+
+/**
+ Returns the key for a given experiment identifier for the NSNotification that is called whenever the enabled switch is toggled
+ @return NSString NSNotification key to listen for when the enabled switch is toggled for the given experiment idenifier
+ **/
++ (NSString *)experimentEnabledChangedNotificationsKeyForIdentifier:(NSString *)identifier;
+
+
+/**
+ Returns the key for a given experiment identifier for the NSNotification that is called whenever an experiment option is selected
+ @return NSString NSNotification key to listen for when an option is selected for the given experiment identifier
+ **/
++ (NSString *)experimentOptionChangedNotificationsKeyForIdentifier:(NSString *)identifier;
+
 
 @end

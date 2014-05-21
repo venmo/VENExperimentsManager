@@ -3,6 +3,9 @@
 
 #define VEN_KEY_LOCAL_EXPERIMENT_VALUES @"com.venmo.experiments.manager.overrides"
 
+NSString *const VENExperimentEnabledNotificationUserInfoKey = @"VENExperimentEnabledNotificationUserInfoKey";
+NSString *const VENExperimentOptionNotificationUserInfoKey  = @"VENExperimentOptionNotificationUserInfoKey";
+
 static VENExperimentsManager *experimentsManager = nil;
 
 @interface VENExperimentsManager () {}
@@ -219,6 +222,16 @@ static VENExperimentsManager *experimentsManager = nil;
 
 + (BOOL)experimentationEnabled {
     return [[VENExperimentsManager sharedExperimentsManager] initialized];
+}
+
+
++ (NSString *)experimentEnabledChangedNotificationsKeyForIdentifier:(NSString *)identifier {
+    return [identifier stringByAppendingString:@"_ENABLED_CHANGED_NOTIFICATION_KEY"];
+}
+
+
++ (NSString *)experimentOptionChangedNotificationsKeyForIdentifier:(NSString *)identifier {
+    return [identifier stringByAppendingString:@"_OPTION_CHANGED_NOTIFICATION_KEY"];
 }
 
 @end
