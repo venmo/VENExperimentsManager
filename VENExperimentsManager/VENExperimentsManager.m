@@ -18,9 +18,9 @@ static VENExperimentsManager *experimentsManager = nil;
 
 
 + (void)startExperimentsManagerWithPlistName:(NSString *)plistName {
-    
+
     static dispatch_once_t once;
-    
+
     dispatch_once(&once, ^ {
         experimentsManager = [[self alloc] init];
         if (![experimentsManager startExperimentsManagerWithPlistName:plistName]) {
@@ -38,28 +38,28 @@ static VENExperimentsManager *experimentsManager = nil;
 - (BOOL)startExperimentsManagerWithPlistName:(NSString *)plistName {
     self.initialized    = NO;
     self.configurationFileName  = plistName;
-    
+
     self.experiments = [self initialStateForPlist:plistName];
-    
+
     if (!self.experiments || ![self.experiments count]) {
         return NO;
     }
-    
+
     NSUserDefaults *defaults    = [NSUserDefaults standardUserDefaults];
     NSArray *localExperiments   = [defaults objectForKey:[self persistenceKeyForCurrentConfigurationFile]];
-    
+
     for (NSDictionary *experimentDictionary in localExperiments) {
         VENExperiment *experiment = [[VENExperiment alloc] initWithIdentifier:nil
                                                    andConfigurationDictionary:experimentDictionary];
         VENExperiment *baseExp = self.experiments[experiment.identifier];
-        
+
         if (baseExp) {
-            
+
             // Always update some basic fields
             experiment.userEditable = baseExp.userEditable;
             experiment.details      = baseExp.details;
             experiment.options      = baseExp.options;
-            
+
             if (baseExp.forceUpdate) {
                 experiment.forceUpdate = YES;
                 experiment.enabled = baseExp.enabled;
@@ -71,17 +71,17 @@ static VENExperimentsManager *experimentsManager = nil;
             else if (!experiment.options[experiment.selectedOption]) {
                 experiment.selectedOption = baseExp.selectedOption;
             }
-            
+
             self.experiments[experiment.identifier] = experiment;
         }
         else {
             // Do not add experiments in UserDefaults which are not in the plist
         }
     }
-    
+
     [self persistExperimentStates];
     self.initialized = YES;
-    
+
     return YES;
 }
 
@@ -89,10 +89,10 @@ static VENExperimentsManager *experimentsManager = nil;
 - (NSMutableDictionary *)initialStateForPlist:(NSString *)plistName {
     NSBundle *bundle = [NSBundle mainBundle];
     bundle = [NSBundle bundleForClass:[self class]];
-    
+
     NSString *plistPath = [bundle pathForResource:plistName ofType:@"plist"];
     NSDictionary *experimentsDictionary = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-    
+
     NSMutableDictionary *experimentObjects = [NSMutableDictionary dictionary];
     for (NSString *experimentIdentifier in experimentsDictionary) {
         VENExperiment *experiment = [[VENExperiment alloc] initWithIdentifier:experimentIdentifier andConfigurationDictionary:experimentsDictionary[experimentIdentifier]];
@@ -100,7 +100,7 @@ static VENExperimentsManager *experimentsManager = nil;
             [experimentObjects setObject:experiment forKey:experimentIdentifier];
         }
     }
-    
+
     if (![experimentObjects count]) {
         return nil;
     }
@@ -111,12 +111,12 @@ static VENExperimentsManager *experimentsManager = nil;
 - (void)persistExperimentStates {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *experimentDictionaries = [NSMutableArray array];
-    
+
     for (NSString *experimentIdentifier in [self.experiments allKeys]) {
         VENExperiment *experiment = self.experiments[experimentIdentifier];
         [experimentDictionaries addObject:[experiment dictionaryRepresentation]];
     }
-    
+
     [defaults setObject:experimentDictionaries forKey:[self persistenceKeyForCurrentConfigurationFile]];
     [defaults synchronize];
 }
@@ -131,7 +131,7 @@ static VENExperimentsManager *experimentsManager = nil;
     if (![[self class] experimentationEnabled]) {
         return NO;
     }
-    
+
     VENExperiment *experiment = self.experiments[experimentIdentifier];
     return experiment;
 }
@@ -141,7 +141,7 @@ static VENExperimentsManager *experimentsManager = nil;
     if (![[self class] experimentationEnabled]) {
         return NO;
     }
-    
+
     return [[self experimentWithIdentifier:experimentIdentifier] enabled];
 }
 
@@ -150,27 +150,27 @@ static VENExperimentsManager *experimentsManager = nil;
     VENExperiment *experiment = [self experimentWithIdentifier:experimentIdentifier];
     [experiment setEnabled:enabled];
     self.experiments[experiment.identifier] = experiment;
-    
+
     [self persistExperimentStates];
 }
 
 
-- (void)setSelectdOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
-                                    selectedOptions:(NSString *)selectedOption {
+- (void)setSelectedOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
+                                     selectedOptions:(NSString *)selectedOption {
     VENExperiment *experiment = [self experimentWithIdentifier:experimentIdentifier];
     experiment.selectedOption = selectedOption;
     self.experiments[experiment.identifier] = experiment;
-    
+
     [self persistExperimentStates];
 }
 
 
 - (void)deleteAllUserSettings {
-    
+
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults removeObjectForKey:[self persistenceKeyForCurrentConfigurationFile]];
     [userDefaults synchronize];
-    
+
     self.experiments = [self initialStateForPlist:self.configurationFileName];
 }
 
@@ -200,10 +200,10 @@ static VENExperimentsManager *experimentsManager = nil;
     [[self sharedExperimentsManager] setExperimentWithIdentifier:experimentIdentifier isEnabled:enabled];
 }
 
-+ (void)setSelectdOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
-                                    selectedOption:(NSString *)selectedOption {
-    [[self sharedExperimentsManager] setSelectdOptionForExperimentWithIdentifier:experimentIdentifier
-                                                                 selectedOptions:selectedOption];
++ (void)setSelectedOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
+                                      selectedOption:(NSString *)selectedOption {
+    [[self sharedExperimentsManager] setSelectedOptionForExperimentWithIdentifier:experimentIdentifier
+                                                                  selectedOptions:selectedOption];
 }
 
 
