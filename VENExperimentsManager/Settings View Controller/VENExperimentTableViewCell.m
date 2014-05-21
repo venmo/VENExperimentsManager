@@ -34,7 +34,12 @@
 
 
 - (IBAction)switchValueChanged:(id)sender {
-    [VENExperimentsManager setExperimentWithIdentifier:self.experiment.identifier isEnabled:[((UISwitch *)sender) isOn]];
+    BOOL isON = [((UISwitch *)sender) isOn];
+    [VENExperimentsManager setExperimentWithIdentifier:self.experiment.identifier isEnabled:isON];
+    NSDictionary *userInfo = @{VENExperimentEnabledNotificationUserInfoKey: @(isON)};
+    [[NSNotificationCenter defaultCenter] postNotificationName:[VENExperimentsManager enabledChangedNotificationNameForIdentifier:self.experiment.identifier]
+                                                        object:nil
+                                                      userInfo:userInfo];
 }
 
 
@@ -56,9 +61,15 @@
 
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    [VENExperimentsManager setSelectedOptionForExperimentWithIdentifier:self.experiment.identifier selectedOption:[[[self.experiment options] allKeys] objectAtIndex:row]];
+    NSString *selectedOption = [[[self.experiment options] allKeys] objectAtIndex:row];
+    [VENExperimentsManager setSelectedOptionForExperimentWithIdentifier:self.experiment.identifier
+                                                         selectedOption:selectedOption];
     [self.optionsField setText:[self.experiment selectedOptionDescription]];
-    
+    NSDictionary *userInfo = @{VENExperimentOptionNotificationUserInfoKey: selectedOption};
+    [[NSNotificationCenter defaultCenter] postNotificationName:[VENExperimentsManager optionChangedNotificationNameForIdentifier:self.experiment.identifier]
+                                                        object:nil
+                                                      userInfo:userInfo];
+
     [self.optionsField resignFirstResponder];
 }
 
