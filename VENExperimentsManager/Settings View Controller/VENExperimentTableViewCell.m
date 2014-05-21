@@ -62,7 +62,8 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSString *selectedOption = [[[self.experiment options] allKeys] objectAtIndex:row];
-    [VENExperimentsManager setSelectdOptionForExperimentWithIdentifier:self.experiment.identifier selectedOption:selectedOption];
+    [VENExperimentsManager setSelectedOptionForExperimentWithIdentifier:self.experiment.identifier
+                                                         selectedOption:selectedOption];
     [self.optionsField setText:[self.experiment selectedOptionDescription]];
     NSDictionary *userInfo = @{VENExperimentOptionNotificationUserInfoKey: selectedOption};
     [[NSNotificationCenter defaultCenter] postNotificationName:[VENExperimentsManager experimentOptionChangedNotificationsKeyForIdentifier:self.experiment.identifier]

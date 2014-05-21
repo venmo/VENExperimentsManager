@@ -45,7 +45,7 @@ extern NSString *const VENExperimentOptionNotificationUserInfoKey;
  Determines whether experimentation is enabled
  @return BOOL indicating whether experimentation is enabled
  @note when experimentation is not enabled, experimentIsEnabled: will return NO for all experiments
-**/
+ **/
 + (BOOL)experimentationEnabled;
 
 
@@ -62,8 +62,8 @@ extern NSString *const VENExperimentOptionNotificationUserInfoKey;
  @param experimentIdentifier The experiment to set the enabled state for
  @param selectedOption The key for the selected experiment option
  **/
-+ (void)setSelectdOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
-                                    selectedOption:(NSString *)selectedOption;
++ (void)setSelectedOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
+                                      selectedOption:(NSString *)selectedOption;
 
 /**
  Returns the key for a given experiment identifier for the NSNotification that is called whenever the enabled switch is toggled
