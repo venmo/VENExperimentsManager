@@ -225,12 +225,12 @@ static VENExperimentsManager *experimentsManager = nil;
 }
 
 
-+ (NSString *)experimentEnabledChangedNotificationsKeyForIdentifier:(NSString *)identifier {
++ (NSString *)enabledChangedNotificationNameForIdentifier:(NSString *)identifier {
     return [identifier stringByAppendingString:@"_ENABLED_CHANGED_NOTIFICATION_KEY"];
 }
 
 
-+ (NSString *)experimentOptionChangedNotificationsKeyForIdentifier:(NSString *)identifier {
++ (NSString *)optionChangedNotificationNameForIdentifier:(NSString *)identifier {
     return [identifier stringByAppendingString:@"_OPTION_CHANGED_NOTIFICATION_KEY"];
 }
 
