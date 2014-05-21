@@ -155,7 +155,7 @@ static VENExperimentsManager *experimentsManager = nil;
 }
 
 
-- (void)setSelectdOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
+- (void)setSelectedOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
                                     selectedOptions:(NSString *)selectedOption {
     VENExperiment *experiment = [self experimentWithIdentifier:experimentIdentifier];
     experiment.selectedOption = selectedOption;
@@ -200,9 +200,9 @@ static VENExperimentsManager *experimentsManager = nil;
     [[self sharedExperimentsManager] setExperimentWithIdentifier:experimentIdentifier isEnabled:enabled];
 }
 
-+ (void)setSelectdOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
++ (void)setSelectedOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
                                     selectedOption:(NSString *)selectedOption {
-    [[self sharedExperimentsManager] setSelectdOptionForExperimentWithIdentifier:experimentIdentifier
+    [[self sharedExperimentsManager] setSelectedOptionForExperimentWithIdentifier:experimentIdentifier
                                                                  selectedOptions:selectedOption];
 }
 

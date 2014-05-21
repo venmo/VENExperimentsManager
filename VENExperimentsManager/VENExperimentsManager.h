@@ -59,7 +59,7 @@
  @param experimentIdentifier The experiment to set the enabled state for
  @param selectedOption The key for the selected experiment option
  **/
-+ (void)setSelectdOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
++ (void)setSelectedOptionForExperimentWithIdentifier:(NSString *)experimentIdentifier
                                     selectedOption:(NSString *)selectedOption;
 
 @end

@@ -56,7 +56,7 @@
 
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    [VENExperimentsManager setSelectdOptionForExperimentWithIdentifier:self.experiment.identifier selectedOption:[[[self.experiment options] allKeys] objectAtIndex:row]];
+    [VENExperimentsManager setSelectedOptionForExperimentWithIdentifier:self.experiment.identifier selectedOption:[[[self.experiment options] allKeys] objectAtIndex:row]];
     [self.optionsField setText:[self.experiment selectedOptionDescription]];
     
     [self.optionsField resignFirstResponder];
