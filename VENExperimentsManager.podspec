@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "VENExperimentsManager"
-  s.version      = "0.2.1"
+  s.version      = "1.0.0"
   s.summary      = "Definition, management and control of experiments within an iOS app."
   s.description  = <<-DESC
                    VENExperimentsManager enables easy definition, management and control of experiments within an iOS app including the following:
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/venmo/VENExperimentsManager"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.author       = { "Chris Maddern" => "chris@venmo.com" }
+  s.author       = { "Venmo" => "engineers@venmo.com" }
   s.platform     = :ios, '5.0'
   s.source       = { :git => "https://github.com/venmo/VENExperimentsManager.git", :tag => "v#{s.version}" }
   s.source_files = 'VENExperimentsManager/**/*.{h,m}'
