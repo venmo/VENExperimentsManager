@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		612817FC1A854E33002D1319 /* VENExperimentsSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 612817F81A854E33002D1319 /* VENExperimentsSettingsTVC.m */; };
+		612817FD1A854E33002D1319 /* VENExperimentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 612817FA1A854E33002D1319 /* VENExperimentTableViewCell.m */; };
 		C21EE10E1865D1BC00C3A07D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21EE10D1865D1BC00C3A07D /* Foundation.framework */; };
 		C21EE11C1865D1BC00C3A07D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21EE11B1865D1BC00C3A07D /* XCTest.framework */; };
 		C21EE11D1865D1BC00C3A07D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21EE10D1865D1BC00C3A07D /* Foundation.framework */; };
@@ -42,6 +44,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		612817F71A854E33002D1319 /* VENExperimentsSettingsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VENExperimentsSettingsTVC.h; path = SettingsViewController/VENExperimentsSettingsTVC.h; sourceTree = "<group>"; };
+		612817F81A854E33002D1319 /* VENExperimentsSettingsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VENExperimentsSettingsTVC.m; path = SettingsViewController/VENExperimentsSettingsTVC.m; sourceTree = "<group>"; };
+		612817F91A854E33002D1319 /* VENExperimentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VENExperimentTableViewCell.h; path = SettingsViewController/VENExperimentTableViewCell.h; sourceTree = "<group>"; };
+		612817FA1A854E33002D1319 /* VENExperimentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VENExperimentTableViewCell.m; path = SettingsViewController/VENExperimentTableViewCell.m; sourceTree = "<group>"; };
+		612817FB1A854E33002D1319 /* VENExperimentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VENExperimentTableViewCell.xib; path = SettingsViewController/VENExperimentTableViewCell.xib; sourceTree = "<group>"; };
 		C21EE10A1865D1BC00C3A07D /* libVENExperimentsManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVENExperimentsManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21EE10D1865D1BC00C3A07D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C21EE1111865D1BC00C3A07D /* VENExperimentsManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VENExperimentsManager-Prefix.pch"; sourceTree = "<group>"; };
@@ -82,6 +89,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		612817F61A854DD6002D1319 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				612817F71A854E33002D1319 /* VENExperimentsSettingsTVC.h */,
+				612817F81A854E33002D1319 /* VENExperimentsSettingsTVC.m */,
+				612817F91A854E33002D1319 /* VENExperimentTableViewCell.h */,
+				612817FA1A854E33002D1319 /* VENExperimentTableViewCell.m */,
+				612817FB1A854E33002D1319 /* VENExperimentTableViewCell.xib */,
+			);
+			name = SettingsViewController;
+			sourceTree = "<group>";
+		};
 		C21EE1011865D1BC00C3A07D = {
 			isa = PBXGroup;
 			children = (
@@ -114,8 +133,9 @@
 		C21EE10F1865D1BC00C3A07D /* VENExperimentsManager */ = {
 			isa = PBXGroup;
 			children = (
-				C21EE1331865D1DC00C3A07D /* VENExperimentsManager.h */,
+				612817F61A854DD6002D1319 /* SettingsViewController */,
 				C21EE1341865D1DC00C3A07D /* VENExperimentsManager.m */,
+				C21EE1331865D1DC00C3A07D /* VENExperimentsManager.h */,
 				C21EE1391865D23D00C3A07D /* VENExperiment.h */,
 				C21EE13A1865D23D00C3A07D /* VENExperiment.m */,
 				C21EE1101865D1BC00C3A07D /* Supporting Files */,
@@ -233,6 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				612817FD1A854E33002D1319 /* VENExperimentTableViewCell.m in Sources */,
+				612817FC1A854E33002D1319 /* VENExperimentsSettingsTVC.m in Sources */,
 				C21EE13B1865D23D00C3A07D /* VENExperiment.m in Sources */,
 				C21EE1371865D1DC00C3A07D /* VENExperimentsManager.m in Sources */,
 			);

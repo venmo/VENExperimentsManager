@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VENExperimentTableViewCell" rowHeight="242" id="hvo-Pg-FVV" customClass="VENExperimentTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hvo-Pg-FVV" id="Dk6-wA-9c5">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="241"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mLK-5Y-Rrr">
+                        <rect key="frame" x="251" y="6" width="51" height="31"/>
+                        <connections>
+                            <action selector="switchValueChanged:" destination="hvo-Pg-FVV" eventType="valueChanged" id="uc9-YA-ExE"/>
+                        </connections>
+                    </switch>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some Experiment Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fcX-Zi-xYo">
+                        <rect key="frame" x="20" y="11" width="187" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Experiment Details" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Egi-RZ-3aT" userLabel="Details Label">
+                        <rect key="frame" x="20" y="44" width="280" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="dmK-OQ-qGX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected Option:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmZ-2H-FHc">
+                        <rect key="frame" x="20" y="110" width="108.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="No value" textAlignment="right" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="6aW-WL-C2q">
+                        <rect key="frame" x="233" y="106" width="65" height="18"/>
+                        <color key="textColor" red="0.23921568630000001" green="0.58431372550000005" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6aW-WL-C2q" firstAttribute="top" secondItem="Egi-RZ-3aT" secondAttribute="bottom" constant="12" id="6Oe-KV-saT"/>
+                    <constraint firstItem="Egi-RZ-3aT" firstAttribute="leading" secondItem="Dk6-wA-9c5" secondAttribute="leadingMargin" constant="12" id="CgV-CJ-kNI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Egi-RZ-3aT" secondAttribute="trailing" constant="12" id="HF0-lR-6re"/>
+                    <constraint firstItem="Egi-RZ-3aT" firstAttribute="top" secondItem="fcX-Zi-xYo" secondAttribute="bottom" constant="12.5" id="OEh-Ye-0Vj"/>
+                    <constraint firstItem="LmZ-2H-FHc" firstAttribute="leading" secondItem="Dk6-wA-9c5" secondAttribute="leadingMargin" constant="12" id="VOH-r1-qRE"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="6aW-WL-C2q" secondAttribute="trailing" constant="14" id="ZSO-rO-3vl"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mLK-5Y-Rrr" secondAttribute="trailing" constant="12" id="aCN-q5-JLw"/>
+                    <constraint firstItem="fcX-Zi-xYo" firstAttribute="top" secondItem="Dk6-wA-9c5" secondAttribute="topMargin" constant="3" id="bab-Vl-C1c"/>
+                    <constraint firstItem="mLK-5Y-Rrr" firstAttribute="top" secondItem="Dk6-wA-9c5" secondAttribute="topMargin" constant="-2" id="dYg-44-AMz"/>
+                    <constraint firstItem="fcX-Zi-xYo" firstAttribute="leading" secondItem="Dk6-wA-9c5" secondAttribute="leadingMargin" constant="12" id="ubN-aG-4WU"/>
+                    <constraint firstItem="LmZ-2H-FHc" firstAttribute="top" secondItem="Egi-RZ-3aT" secondAttribute="bottom" constant="16" id="x9f-wL-Tm8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailsLabel" destination="Egi-RZ-3aT" id="xet-K1-nlr"/>
+                <outlet property="enabledSwitch" destination="mLK-5Y-Rrr" id="V3A-9Z-6Sv"/>
+                <outlet property="nameLabel" destination="fcX-Zi-xYo" id="P2Y-vr-oRD"/>
+                <outlet property="optionsField" destination="6aW-WL-C2q" id="1I5-eA-2Cy"/>
+                <outlet property="optionsLabel" destination="LmZ-2H-FHc" id="4jL-uF-sOQ"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

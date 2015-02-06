@@ -12,6 +12,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = NSLocalizedString(@"Experiments", nil);
 
     NSArray *experiments = [VENExperimentsManager allExperiments];
     self.stableExperiments = [NSMutableArray array];
@@ -40,16 +41,6 @@
     
     self.tableView.tableFooterView = footerView;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-
-- (NSString *)title {
-    return @"Experiments";
 }
 
 
