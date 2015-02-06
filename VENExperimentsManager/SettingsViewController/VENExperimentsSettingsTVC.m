@@ -34,7 +34,7 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor grayColor];
     label.numberOfLines = 0;
-    label.frame = CGRectMake(20, 10, 280, 60);
+    label.frame = CGRectMake(0, 10, CGRectGetWidth(self.view.frame), 60);
     label.font = [UIFont systemFontOfSize:14];
     label.text = @"Most experiments will not take effect until application restart.";
     [footerView addSubview:label];
