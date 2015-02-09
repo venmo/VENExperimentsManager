@@ -132,7 +132,7 @@ static VENExperimentsManager *experimentsManager = nil;
 
 - (VENExperiment *)experimentWithIdentifier:(NSString *)experimentIdentifier {
     if (![[self class] experimentationEnabled]) {
-        return NO;
+        return nil;
     }
 
     VENExperiment *experiment = self.experiments[experimentIdentifier];
