@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "VENExperimentsManager"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Definition, management and control of experiments within an iOS app."
   s.description  = <<-DESC
                    VENExperimentsManager enables easy definition, management and control of experiments within an iOS app including the following:
