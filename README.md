@@ -71,7 +71,7 @@ A sample `experiments.plist` file can be found in the Sample Application.
 The library also contains a basic Experiment Settings View Controller which you can present to allow users to enable and disable experiments.
 
 ```objc
-#import "VENExperimentsSettingsTVC.h"
+# import "VENExperimentsSettingsTVC.h"
 
 ...
 
